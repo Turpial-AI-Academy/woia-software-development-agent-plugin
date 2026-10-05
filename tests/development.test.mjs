@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { access, readFile } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
-import { ROOT, parseFrontmatter } from "../scripts/lib/plugin.mjs";
+const ROOT = path.resolve(import.meta.dirname, "..");
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 
