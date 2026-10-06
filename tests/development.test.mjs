@@ -4,9 +4,15 @@ import path from "node:path";
 import test from "node:test";
 const ROOT = path.resolve(import.meta.dirname, "..");
 
-const ROOT = path.resolve(import.meta.dirname, "..");
-
 const skillRoot = path.join(ROOT, "skills", "development");
+
+test("development boundary requires ready inputs, task closure, and reviewable source", async () => {
+  const skill = await readFile(path.join(skillRoot, "SKILL.md"), "utf8");
+  assert.match(skill, /ready SPEC and executable tasks/);
+  assert.match(skill, /code, configuration, tests, generated inputs, migrations, and implementation documentation/);
+  assert.match(skill, /closed, or explicitly skipped with a concrete reason/);
+  assert.match(skill, /exact source head\/ref/);
+});
 
 function section(document, heading) {
   const result = document.split(/(?=^## )/m).find((part) => heading.test(part.split("\n")[0]));
