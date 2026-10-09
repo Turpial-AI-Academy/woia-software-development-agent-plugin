@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "woia-software-development",
-  "version": "0.5.1",
+  "version": "0.5.6",
   "description": "Implements approved software changes from repository evidence, a ready SPEC, and executable tasks while preserving scope, project conventions, and reviewable source state.",
   "author": {
     "name": "Turpial AI Academy",
